@@ -38,6 +38,7 @@ Inside the .jenkins folder (which is available on /var/lib) all the information 
 Create the one directory(backupfolder) in opt directory for backup the data on master server.
 
 Change the ownership and group name by using chown username:groupname foldername command.
+
                    Ex: chown Jenkins:Jenkins backupfolder 
               
 	
