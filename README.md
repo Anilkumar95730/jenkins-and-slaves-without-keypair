@@ -31,26 +31,27 @@ Click on add buils step option and click on execute shell and write the shell sc
 
 # Backup the Jenkins by using thinbackup plugin:
 
-	Inside the .jenkins folder (which is available on /var/lib) all the information about Jenkins like jobs,nodes,plugins,config file,secrets etc.is available.
+Inside the .jenkins folder (which is available on /var/lib) all the information about Jenkins like jobs,nodes,plugins,config file,secrets etc.is available.
+ 
+ We need to backup the .jenkins to the other folder(create new folder) or external service like store the data on ebs volumes by using thinbackup plugin.
 
-	We need to backup the .jenkins to the other folder(create new folder) or external service like store the data on ebs volumes by using thinbackup plugin.
+Create the one directory(backupfolder) in opt directory for backup the data on master server.
 
-	Create the one directory(backupfolder) in opt directory for backup the data on master server.
-
-	Change the ownership and group name by using chown username:groupname foldername command.
+Change the ownership and group name by using chown username:groupname foldername command.
                    Ex: chown Jenkins:Jenkins backupfolder 
               
-	Change the file permissions by using chmod 777 foldername command.
+	
+ Change the file permissions by using chmod 777 foldername command.
 
-	Go to Jenkins dashboard and go to managed Jenkins > plugins install thinbackup plugin if it is not available.
+Go to Jenkins dashboard and go to managed Jenkins > plugins install thinbackup plugin if it is not available.
 
-	Thinbackup plugin is available under Tools and Actions section.
+Thinbackup plugin is available under Tools and Actions section.
 
-	After installation configure the this plugin on system configuration section.
+After installation configure the this plugin on system configuration section.
 
-	We need to give the directory name(/opt/directoryname in this case) where we want to store the backup data while configuration of thinbackup plugin.
+We need to give the directory name(/opt/directoryname in this case) where we want to store the backup data while configuration of thinbackup plugin.
+ 
+Go to tools and actions section click on thinbackup plugin and click on backup now option.
 
-	Go to tools and actions section click on thinbackup plugin and click on backup now option.
-
-	Data will be store at that directory which we have mentioned  while configuration in the system configuration section.
+Data will be store at that directory which we have mentioned  while configuration in the system configuration section.
 
